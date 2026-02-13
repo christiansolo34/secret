@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to top, #ff758c 0%, #ff7eb3 40%, #ffb199 70%, #87ceeb 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 🌳 Trees */
+.tree {
+  position: absolute;
+  bottom: 0;
+  font-size: 120px;
+}
+.tree.left { left: 0; }
+.tree.right { right: 0; }
+
+/* 🌹 Rose garden */
+.rose {
+  position: absolute;
+  bottom: 0;
+  font-size: 40px;
+  animation: sway 4s ease-in-out infinite alternate;
+}
+@keyframes sway {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+/* 🦋 Butterflies */
+.butterfly {
+  position: absolute;
+  font-size: 30px;
+  animation: fly linear infinite;
+}
+@keyframes fly {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-100px) translateX(50px); }
+  100% { transform: translateY(-200px) translateX(-50px); }
+}
+
+/* ✨ Sparkles */
+.sparkle {
+  position: absolute;
+  color: gold;
+  font-size: 15px;
+  animation: sparkleAnim 1s linear forwards;
+}
+@keyframes sparkleAnim {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+/* ❤️ Floating hearts */
+.heart {
+  position: absolute;
+  bottom: -20px;
+  color: rgba(255,20,147,0.9);
+  font-size: 20px;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  color: white;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* 💌 Envelope */
+.wrapper { cursor: pointer; }
+
+.envelope {
+  position: relative;
+  width: 900px;
+  height: 580px;
+  background: #ff4b6e;
+  border-radius: 25px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff8da1;
+  clip-path: polygon(0 0, 50% 75%, 100% 0);
+  transform-origin: top;
+  transition: transform 0.7s;
+  z-index: 10;
+}
+
+/* ✨ LETTER – PERFECTLY CENTERED WHEN OPENED */
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  height: 520px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: translateY(100%);
+  transition: transform 0.7s;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.wrapper.open .flap {
+  transform: rotateX(180deg);
+}
+
+.wrapper.open .letter {
+  transform: translateY(-50%);
+}
+
+/* ✍️ JUSTIFIED MESSAGE – clean, even edges */
+.message {
+  font-family: 'Dancing Script', cursive;
+  color: #c2185b;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  margin-bottom: 20px;
+}
+
+
+
+.photo-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.photo-frame {
+  width: 32%;
+  aspect-ratio: 1/1;
+  border-radius: 18px;
+  border: 5px solid #ff8da1;
+  overflow: hidden;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
+</head>
+<body>
+
+<!-- 🌳 Trees -->
+<div class="tree left">🌳</div>
+<div class="tree right">🌳</div>
+
+<audio id="bgMusic" preload="auto" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <h1>💌 Happy Valentine's Day Love ❤️</h1>
+
+  <div class="wrapper" onclick="openLetter(this)">
+    <div class="envelope">
+      <div class="flap"></div>
+
+      <!-- 💌 THE LETTER – now with justified text -->
+      <div class="letter">
+        <div class="message">
+          Happy Valentine's Day Love ❤️<br><br>
+          Hi Love ko, Happy Valentine’s Day po! Thank you so much kasi andyan ka lagi pag kailangan kita,
+          which I really, really appreciate.I no longer feel alone simula nung dumating ka sa buhay ko,and I super enjoy every moment we’re together.
+          Napaka-peaceful ng isip ko at nawawala lahat ng pagod ko pag nakikita kita at Isa ka na din love sa mga goal ko na gusto ko matupad sa future at inspiration ko na maging successful.
+          I hope na magkaroon pa tayo ng maraming bonding moments at more galas to come.
+          Lagi mong tatandaan, Love na I’m always here for you. Let’s build more happy memories, I loveee youuu so much, Love ko! my number one basher and enemy mwahhhhh.
+          I love you endlessly and completely.<br><br>
+          Forever yours, Christian 💖<br><br>
+        </div>
+
+        <div class="photo-container">
+          <div class="photo-frame"><img src="photo1.jpg"></div>
+          <div class="photo-frame"><img src="photo2.jpg"></div>
+          <div class="photo-frame"><img src="photo3.jpg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLetter(element){
+  element.classList.toggle("open");
+  document.getElementById("bgMusic").play().catch(()=>{});
+  createSparkles();
+}
+
+/* ❤️ Floating hearts */
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 8000);
+}
+setInterval(createHeart, 400);
+
+/* 🌹 Rose garden */
+for(let i = 0; i < 25; i++){
+  const rose = document.createElement("div");
+  rose.classList.add("rose");
+  rose.innerHTML = "🌹";
+  rose.style.left = Math.random() * 100 + "vw";
+  rose.style.fontSize = (30 + Math.random() * 25) + "px";
+  document.body.appendChild(rose);
+}
+
+/* 🦋 Butterflies */
+for(let i = 0; i < 6; i++){
+  const butterfly = document.createElement("div");
+  butterfly.classList.add("butterfly");
+  butterfly.innerHTML = "🦋";
+  butterfly.style.left = Math.random() * 100 + "vw";
+  butterfly.style.top = Math.random() * 60 + "vh";
+  butterfly.style.animationDuration = (6 + Math.random() * 4) + "s";
+  document.body.appendChild(butterfly);
+}
+
+/* ✨ Sparkles */
+function createSparkles(){
+  for(let i = 0; i < 30; i++){
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.innerHTML = "✨";
+    sparkle.style.left = (window.innerWidth / 2 + (Math.random() * 300 - 150)) + "px";
+    sparkle.style.top = (window.innerHeight / 2 + (Math.random() * 200 - 100)) + "px";
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 1000);
+  }
+}
+</script>
+
+</body>
+</html>
